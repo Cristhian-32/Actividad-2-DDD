@@ -1,9 +1,12 @@
 from email import message
 import socket
 
-port = 3942
+port = 4000
+
+print("Conectado al servidor en puerto: ", port)
+
 while True:
     clientesocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     clientesocket.connect(('localhost', port))
-    message = input("cliente: \n")
+    message = input("cliente: ")
     clientesocket.send(message.encode())
